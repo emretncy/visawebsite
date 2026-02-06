@@ -114,6 +114,51 @@ export const site = {
       answer:
         "Yetersiz belgeler, mali durumun yeterince kanıtlanamaması, seyahat amacının net açıklanmaması veya randevuya gelinmemesi sık red nedenleridir. Rehberlerimizde bu konuları detaylı anlatıyoruz.",
     },
+    {
+      question: "Schengen vizesi ile hangi ülkelere gidilebilir?",
+      answer:
+        "Tek bir Schengen vizesi ile Avrupa'da 27 ülkeye (Almanya, Fransa, İtalya, İspanya, Hollanda, Yunanistan, Avusturya, Belçika, İsviçre, Portekiz, Polonya, Çekya, İsveç, Norveç, Danimarka, Finlandiya, Macaristan vb.) seyahat edebilirsiniz. Vizeyi, seyahatinizde ana hedef veya ilk giriş yapacağınız ülkeye başvurarak alırsınız.",
+    },
+    {
+      question: "Vize randevusu nasıl alınır?",
+      answer:
+        "Randevu, hedef ülkenin konsolosluğu veya yetkili vize başvuru merkezi (VAC) üzerinden alınır. Çoğu ülke online randevu sistemine geçmiştir; ilgili ülke sayfamızdaki randevu bilgisinden linke ulaşabilirsiniz. Randevuyu seyahat tarihinizden en az 4–6 hafta önce planlamanız önerilir.",
+    },
+    {
+      question: "Seyahat sigortası neden gerekli?",
+      answer:
+        "Schengen ülkelerine başvuruda seyahat sigortası zorunludur; minimum 30.000 EUR kapsamı ve tüm Schengen bölgesi geçerli olmalıdır. Diğer ülkelerde de çoğu başvuruda sigorta istenir. Sağlık masraflarını karşılamak ve konsolosluğun şartını yerine getirmek için gereklidir.",
+    },
+    {
+      question: "Pasaportumun geçerlilik süresi ne kadar olmalı?",
+      answer:
+        "Çoğu ülke en az 3 ay, bazıları (ör. ABD) en az 6 ay geçerlilik ister. Başvuru yaparken pasaportunuzun seyahat bitiş tarihinden sonra da geçerli olması gerekir. Hedef ülkenin sayfasından güncel şartı kontrol edin.",
+    },
+    {
+      question: "Vize ücretleri ne kadar?",
+      answer:
+        "Ülkeye ve vize türüne göre değişir. Schengen vizesi genelde 80 EUR, 6–12 yaş 40 EUR, 6 yaş altı ücretsizdir. ABD, Birleşik Krallık, Kanada gibi ülkelerin ücretleri kendi para birimlerinde ve türe göre farklıdır. Her ülke sayfamızda ücret bilgisi yer alır.",
+    },
+    {
+      question: "Başvuruyu ne kadar önceden yapmalıyım?",
+      answer:
+        "Seyahat tarihinizden en az 4–6 hafta önce başvuru yapmanız önerilir. Yoğun dönemlerde randevu bulmak ve işlem süresi uzayabilir. Bazı ülkeler en erken 3–6 ay önceden başvuru kabul eder; en geç başvuru tarihi de ülkeye göre değişir.",
+    },
+    {
+      question: "Red alırsam tekrar başvurabilir miyim?",
+      answer:
+        "Evet. Red gerekçesini inceleyip eksik veya hatalı belgeleri tamamlayarak yeni bir başvuru yapabilirsiniz. Aynı konsolosluğa hemen tekrar başvurmak yerine bir süre bekleyip daha güçlü bir dosya ile başvurmak genelde daha iyi sonuç verir. Rehberlerimizde red nedenleri ve tekrar başvuru ipuçları anlatılıyor.",
+    },
+    {
+      question: "Biyometri nedir, neden isteniyor?",
+      answer:
+        "Biyometri, parmak izi ve fotoğraf alınmasıdır. Birçok ülke (Schengen, ABD, Birleşik Krallık vb.) vize başvurusunda biyometri toplar; güvenlik ve kimlik doğrulama amacıyladır. Randevuya şahsen gitmeniz gerekir; biyometri daha önce alındıysa bazı ülkelerde belirli süre tekrar istenmeyebilir.",
+    },
+    {
+      question: "Turist ve iş vizesi arasındaki fark nedir?",
+      answer:
+        "Turist vizesi tatil, aile/arkadaş ziyareti veya kısa süreli geziler içindir; ülkede çalışma veya ücretli faaliyet yasaktır. İş vizesi toplantı, fuar, müşteri ziyareti gibi kısa süreli iş amaçlı seyahatler içindir; genelde davet mektubu ve iş veren belgesi istenir. Her iki vize türünün belgeleri ve süreleri farklıdır; hedef ülke sayfasından detaylara bakın.",
+    },
   ],
   popularDestinationSlugs: ["schengen", "uk", "usa", "japan"] as const,
 };

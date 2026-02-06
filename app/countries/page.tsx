@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { countries, regionLabels } from "@/data/countries";
+import { countries, continentLabels } from "@/data/countries";
 import CountryCard from "@/components/CountryCard";
 
 export const metadata: Metadata = {
@@ -14,20 +13,19 @@ export const metadata: Metadata = {
   },
 };
 
-const regionOrder: (keyof typeof regionLabels)[] = [
-  "schengen",
-  "uk",
-  "usa",
-  "canada",
-  "japan",
-  "others",
+const continentOrder: (keyof typeof continentLabels)[] = [
+  "europe",
+  "north-america",
+  "asia",
+  "oceania",
+  "other",
 ];
 
 export default function CountriesPage() {
-  const byRegion = regionOrder.map((region) => ({
-    region,
-    label: regionLabels[region],
-    countries: countries.filter((c) => c.region === region),
+  const byContinent = continentOrder.map((continent) => ({
+    continent,
+    label: continentLabels[continent],
+    countries: countries.filter((c) => c.continent === continent),
   }));
 
   return (
@@ -39,27 +37,14 @@ export default function CountriesPage() {
           </h1>
           <p className="mt-2 text-muted">
             Hedef ülkenizi seçin; vize türleri, belgeler ve süreç rehberine
-            gidin.
+            gidin. Ülkeler kıtaya göre gruplandırılmıştır.
           </p>
         </div>
 
-        <div className="mb-8 rounded-xl border border-border bg-card p-4">
-          <h2 className="font-semibold text-foreground">Schengen bölgesi</h2>
-          <p className="mt-1 text-sm text-muted">
-            Tek Schengen vizesi ile birden fazla ülkeye seyahat edebilirsiniz.
-          </p>
-          <Link
-            href="/countries/schengen"
-            className="mt-3 inline-flex items-center text-sm font-medium text-primary hover:text-primary-hover"
-          >
-            Schengen ülkelerini listele →
-          </Link>
-        </div>
-
-        {byRegion.map(
-          ({ region, label, countries: list }) =>
+        {byContinent.map(
+          ({ continent, label, countries: list }) =>
             list.length > 0 && (
-              <section key={region} className="mb-12">
+              <section key={continent} className="mb-12">
                 <h2 className="mb-4 text-xl font-semibold text-foreground">
                   {label}
                 </h2>

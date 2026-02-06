@@ -40,8 +40,8 @@ export default function QuickSelector() {
           <p className="mt-1 text-center text-sm text-muted">
             Hedef ülke ve vize amacına göre rehbere gidin
           </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div>
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-4">
+            <div className="flex-1 min-w-0">
               <label htmlFor="country" className="block text-sm font-medium text-foreground">
                 Hedef ülke
               </label>
@@ -49,7 +49,7 @@ export default function QuickSelector() {
                 id="country"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
-                className="mt-1 block w-full rounded-lg border border-border bg-card px-3 py-2 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="mt-1 block w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               >
                 <option value="">Ülke seçin</option>
                 {countries.map((c) => (
@@ -59,7 +59,7 @@ export default function QuickSelector() {
                 ))}
               </select>
             </div>
-            <div>
+            <div className="flex-1 min-w-0">
               <label htmlFor="purpose" className="block text-sm font-medium text-foreground">
                 Vize amacı
               </label>
@@ -67,7 +67,7 @@ export default function QuickSelector() {
                 id="purpose"
                 value={purpose}
                 onChange={(e) => setPurpose(e.target.value)}
-                className="mt-1 block w-full rounded-lg border border-border bg-card px-3 py-2 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="mt-1 block w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               >
                 <option value="">Amaç seçin</option>
                 {site.visaPurposes.map((p) => (
@@ -77,14 +77,15 @@ export default function QuickSelector() {
                 ))}
               </select>
             </div>
-          </div>
-          <div className="mt-6">
             <button
               type="button"
               onClick={handleStart}
-              className="w-full rounded-lg bg-primary px-4 py-3 font-semibold text-primary-foreground hover:bg-primary-hover transition-colors sm:w-auto sm:px-8"
+              className="w-full sm:w-auto shrink-0 rounded-lg bg-primary px-6 py-2.5 font-semibold text-primary-foreground hover:bg-primary-hover transition-colors flex items-center justify-center gap-2 h-[42px] sm:min-w-[120px]"
             >
-              Başla
+              Rehbere git
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </button>
           </div>
         </div>
