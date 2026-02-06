@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --primary: #0f766e;
+  --primary-hover: #0d9488;
+  --primary-foreground: #f0fdfa;
+  --accent: #134e4a;
+  --card: #ffffff;
+  --card-border: #e7e5e4;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "DM Sans", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c0a09;
+    --foreground: #fafaf9;
+    --muted: #a8a29e;
+    --border: #292524;
+    --card: #1c1917;
+    --card-border: #292524;
+    --primary: #2dd4bf;
+    --primary-hover: #5eead4;
+    --primary-foreground: #134e4a;
+    --accent: #99f6e4;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
