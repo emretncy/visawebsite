@@ -43,6 +43,8 @@ export interface Country {
   visaTypes: CountryVisaType[];
   processSteps: ProcessStep[];
   requiredDocuments: string[];
+  /** Documents per visa type (optional; falls back to requiredDocuments) */
+  documentsByVisaType?: Record<string, string[]>;
   /** Documents by applicant profile */
   documentsByProfile?: Record<string, DocumentProfile>;
   activeConsulates: Consulate[];
@@ -234,6 +236,30 @@ export const countries: Country[] = [
       "İş veya öğrenci belgesi",
       "Seyahat programı",
     ],
+    documentsByVisaType: {
+      "business-visa": [
+        "Geçerli pasaport",
+        "Schengen vize başvuru formu",
+        "2 adet biyometrik fotoğraf",
+        "Seyahat sigortası (min. 30.000 EUR)",
+        "Davet mektubu (Fransa’daki firma/kurumdan)",
+        "İş veren onayı ve şirket belgeleri",
+        "Uçak bileti rezervasyonu",
+        "Konaklama rezervasyonu",
+        "Mali durum belgeleri (son 3 ay)",
+      ],
+      "student-visa": [
+        "Geçerli pasaport",
+        "Schengen vize başvuru formu",
+        "2 adet biyometrik fotoğraf",
+        "Seyahat sigortası (min. 30.000 EUR)",
+        "Kabul mektubu (okul/kurs)",
+        "Öğrenci belgesi",
+        "Mali durum belgeleri (burs veya hesap)",
+        "Uçak bileti rezervasyonu",
+        "Konaklama rezervasyonu",
+      ],
+    },
     activeConsulates: [
       { city: "İstanbul", address: "İstiklal Caddesi No: 4, 34430 Beyoğlu, İstanbul", phone: "+90 212 334 8700", email: "istanbul@diplomatie.gouv.fr" },
       { city: "Ankara", address: "Paris Caddesi No: 70, 06420 Çankaya, Ankara", phone: "+90 312 455 4545", email: "ankara@diplomatie.gouv.fr" },
@@ -546,4 +572,14 @@ export function getCountryBySlug(slug: string): Country | undefined {
 
 export function getCountriesByRegion(region: RegionSlug): Country[] {
   return countries.filter((c) => c.region === region);
+}
+
+/** Returns document list for a country + visa type. Uses documentsByVisaType if set, else requiredDocuments. */
+export function getDocumentsForVisaType(
+  country: Country,
+  visaTypeSlug: string
+): string[] {
+  return (
+    country.documentsByVisaType?.[visaTypeSlug] ?? country.requiredDocuments
+  );
 }

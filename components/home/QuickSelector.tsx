@@ -11,10 +11,22 @@ export default function QuickSelector() {
   const [purpose, setPurpose] = useState("");
 
   const handleStart = () => {
-    if (country) {
-      router.push(site.links.country(country));
-    } else {
+    if (!country) {
       router.push("/countries");
+      return;
+    }
+    // Map purpose to visa type slug; if set, go straight to documents step
+    const purposeToVisaType: Record<string, string> = {
+      tourist: "tourist-visa",
+      business: "business-visa",
+      student: "student-visa",
+      family: "family-reunion",
+    };
+    const visaTypeSlug = purpose ? purposeToVisaType[purpose] : null;
+    if (visaTypeSlug) {
+      router.push(`/country/${country}/apply/${visaTypeSlug}`);
+    } else {
+      router.push(`/country/${country}/apply`);
     }
   };
 

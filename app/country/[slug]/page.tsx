@@ -78,6 +78,24 @@ export default function CountryDetailPage({ params }: PageProps) {
           </div>
         </div>
 
+        {/* Progressive apply CTA */}
+        <Link
+          href={`/country/${country.slug}/apply`}
+          className="mb-8 flex flex-col gap-2 rounded-xl border-2 border-primary bg-primary/5 p-6 transition-colors hover:border-primary-hover hover:bg-primary/10 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">
+              Adım adım başvuru rehberi
+            </h2>
+            <p className="text-sm text-muted">
+              Vize türünüzü seçin, ardından gerekli belgeleri ve süreci görün.
+            </p>
+          </div>
+          <span className="shrink-0 rounded-lg bg-primary px-4 py-2 font-semibold text-primary-foreground hover:bg-primary-hover">
+            Başla →
+          </span>
+        </Link>
+
         {/* Overview */}
         <Section id="overview" title="Genel bakış" className="mb-6">
           <p className="text-foreground leading-relaxed">
